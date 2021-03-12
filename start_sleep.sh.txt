@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# webtier
+su - webtier -c "/bin/bash /tmp/sleep3.sh &"
+sleep 3
+su - webtier -c "/bin/bash /tmp/sleep4.sh &"
+
+# weblogic
+/tmp/sleep1.sh &
+sleep 3
+/tmp/sleep2.sh
