@@ -1,8 +1,13 @@
 
+# Environment variables required for this build (do NOT change)
+# -------------------------------------------------------------
+ENV FMW_PKG=fmw_14.1.1.0.0_wls_lite_Disk1_1of1.zip \
+    FMW_JAR=fmw_14.1.1.0.0_wls_lite_generic.jar
+
+# Copy packages
+# -------------
+COPY --chown=oracle:root $FMW_PKG install.file oraInst.loc /u01/
 
 
 
-
-
-
-CMD ["/bin/bash", "sleep1.sh", "&", "sleep2.sh"]
+CMD ["/tmp/start_sleep.sh"]
